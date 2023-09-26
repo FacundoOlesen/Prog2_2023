@@ -7,8 +7,8 @@ public class Futbolista extends Persona {
     private String pieHabil;
     private int goles;
 
-    public Futbolista(String nombre, String apellido, int nroPasaporte, LocalDate fechaNacimiento, String posicion, String pieHabil, int goles) {
-        super(nombre, apellido, nroPasaporte, fechaNacimiento);
+    public Futbolista(String nombre, String apellido, int nroPasaporte, LocalDate fechaNacimiento, boolean viajando, boolean enConcentracion, boolean enPais,  String posicion, String pieHabil, int goles) {
+        super(nombre, apellido, nroPasaporte, fechaNacimiento, viajando, enConcentracion, enPais);
         this.posicion=posicion;
         this.pieHabil=pieHabil;
         this.goles=goles;

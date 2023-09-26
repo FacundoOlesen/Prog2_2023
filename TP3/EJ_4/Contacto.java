@@ -96,4 +96,13 @@ public class Contacto {
                 ", Numero De Telefono: " + this.nroTelefono;
     }
 
+    @Override
+    public boolean equals(Object obj){
+        if(!(obj instanceof Contacto)){
+            return false;
+        }
+        Contacto aux = (Contacto) obj;
+        return aux.getNroTelefono() == this.getNroTelefono() && aux.getNombre()==this.getNombre() && aux.getApellido()==this.getApellido();
+    }
+
 }

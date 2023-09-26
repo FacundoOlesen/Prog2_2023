@@ -5,8 +5,8 @@ import java.time.LocalDate;
 public class Masajista extends Persona {
     private String titulo;
     private int aniosExp;
-    public Masajista(String nombre, String apellido, int nroPasaporte, LocalDate fechaNacimiento, String titulo, int aniosExp) {
-        super(nombre, apellido, nroPasaporte, fechaNacimiento);
+    public Masajista(String nombre, String apellido, int nroPasaporte, LocalDate fechaNacimiento,  boolean viajando, boolean enConcentracion, boolean enPais, String titulo, int aniosExp) {
+        super(nombre, apellido, nroPasaporte, fechaNacimiento, viajando, enConcentracion, enPais);
         this.titulo=titulo;
         this.aniosExp=aniosExp;
     }

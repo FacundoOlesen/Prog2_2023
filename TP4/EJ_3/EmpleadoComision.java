@@ -2,16 +2,16 @@ package TP4.EJ_3;
 
 public class EmpleadoComision extends Empleado {
     private int cantVentas;
-    public static final int PORCENTAJE = 10;
+    private  int porcentaje;
 
-    public EmpleadoComision(String nombre, String apellido, double salario, int cantVentas) {
+    public EmpleadoComision(String nombre, String apellido, double salario, int cantVentas, int porcentaje) {
         super(nombre, apellido, salario);
         this.cantVentas = cantVentas;
-        super.salario = salario + cantVentas / PORCENTAJE;
+        this.porcentaje=porcentaje;
     }
 
     public double getSalario() {
-        return salario;
+        return salario+cantVentas/porcentaje;
     }
 
 }

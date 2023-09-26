@@ -7,9 +7,7 @@ public class Principal {
 
         Juego j1 = new Juego("Quien gana?", Batman, Superm);
 
-        j1.addCualidades(Batman);
-        j1.addCualidades(Superm);
+      
 
-        System.out.println("Ganó: " + j1.jugar());
     }
 }

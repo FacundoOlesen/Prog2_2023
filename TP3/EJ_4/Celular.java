@@ -29,19 +29,20 @@ public class Celular {
         }
     }
 
-    public void mostrarRepetidos() {
-        for (int i = 0; i < arrContactos.size() ; i++) {
-            for (int j = i + 1; j < arrContactos.size(); j++) {
-                if (arrContactos.get(i).getNombre().equals(arrContactos.get(j).getNombre())
-                        && arrContactos.get(i).getApellido().equals(arrContactos.get(j).getApellido())
-                        && arrContactos.get(i).getNroTelefono() == (arrContactos.get(j).getNroTelefono())) {
-                    System.out.println("----------------------");
-                    System.out.println(arrContactos.get(i));
-                    System.out.println(arrContactos.get(j));                
+    public ArrayList<Contacto> mostrarRepetidos() {
+        ArrayList  <Contacto> contactosRepetidos  = new ArrayList<>();
+        for (Contacto contacto : arrContactos) {
+            int j=1;
+            for(int i=j; i< arrContactos.size();i++){
+                if(arrContactos.get(i).equals(contacto)&&!contactosRepetidos.contains(contacto)){
+                    arrContactos.add(contacto);
                 }
             }
+            j++;
         }
+        return contactosRepetidos;
     }
+
 
     public void mostrarContactosMismoNum() {
         for (int i = 0; i < arrContactos.size(); i++) {

@@ -6,11 +6,10 @@ public class EmpleadoHoraExtra extends Empleado {
     public EmpleadoHoraExtra(String nombre, String apellido, double salario, double horasTrabajadas) {
         super(nombre, apellido, salario);
         this.horasTrabajadas = horasTrabajadas;
-        this.salario = salario * horasTrabajadas;
     }
 
     public double getSalario() {
-        return salario;
+        return salario *horasTrabajadas;
     }
 
 }
