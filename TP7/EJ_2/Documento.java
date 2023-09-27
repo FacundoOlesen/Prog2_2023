@@ -10,7 +10,7 @@ public class Documento {
 
     public Documento(String titulo, String contTextual) {
         this.titulo = titulo;
-        this.contTextual=contTextual;
+        this.contTextual = contTextual;
         this.autores = new ArrayList<>();
         this.palabrasClave = new ArrayList<>();
     }
@@ -41,13 +41,21 @@ public class Documento {
             this.palabrasClave.add(p);
     }
 
-    @Override
-    public String toString() {
-        return "Titulo: " +this.getTitulo()+
-                " Cont. textual: " +this.getContTextual();
+    public ArrayList<String> getPalabrasClave() {
+        ArrayList<String> list = new ArrayList<>(this.palabrasClave);
+        return list;
+    }
+
+    public ArrayList<String> getAutores() {
+        ArrayList<String> list = new ArrayList<>(this.autores);
+        return list;
     }
 
 
-    
+    @Override
+    public String toString() {
+        return "Titulo: " + this.getTitulo() +
+                " Cont. textual: " + this.getContTextual();
+    }
 
 }
