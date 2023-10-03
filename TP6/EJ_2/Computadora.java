@@ -2,12 +2,12 @@ package TP6.EJ_2;
 
 public class Computadora extends ElementoCola {
     private String nombre;
-    private double rapidez;
+    private double velocidad;
     private Proceso proc;
 
-    public Computadora(String nombre, double rapidez) {
+    public Computadora(String nombre, double velocidad) {
         this.nombre = nombre;
-        this.rapidez = rapidez;
+        this.velocidad = velocidad;
         proc = null;
     }
 
@@ -19,12 +19,12 @@ public class Computadora extends ElementoCola {
         this.nombre = nombre;
     }
 
-    public double getRapidez() {
-        return rapidez;
+    public double getVelocidad() {
+        return velocidad;
     }
 
-    public void setRapidez(double rapidez) {
-        this.rapidez = rapidez;
+    public void setVelocidad(double velocidad) {
+        this.velocidad = velocidad;
     }
 
     public void ejecutarProceso(Proceso p) {
@@ -32,13 +32,13 @@ public class Computadora extends ElementoCola {
     }
 
     @Override
-    public boolean esMenor(ElementoCola obj1, ElementoCola obj2) {
-        return ((Computadora) obj1).getRapidez() > ((Computadora) obj2).getRapidez();
+    public boolean esMenor(ElementoCola otro) {
+        return this.getVelocidad()< ((Computadora)otro).getVelocidad();
     }
 
     public String toString() {
         return "\nNombre PC:" + this.getNombre() +
-                " Velocidad: " + this.getRapidez();
+                " Velocidad: " + this.getVelocidad();
     }
 
 }

@@ -9,6 +9,6 @@ public class CondicionPorCultivosUsables extends CondicionDeBusqueda {
 
     @Override
     public boolean cumple(ProductoQuimico productoQuimico) {
-        return !productoQuimico.getCultivosNoUsar().contains(cultivo);
+        return productoQuimico.puedeUsarseEn(cultivo);
     }
 }

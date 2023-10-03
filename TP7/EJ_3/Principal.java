@@ -18,24 +18,24 @@ public class Principal {
         // A
         CondicionDeBusqueda cond1 = new CondicionPorNombreCientifico("Epipremnum aureum");
         System.out.println("Todas las plantas cuyo nombre científico incluya la palabra 'auereum'\n"
-                + viveroTandil.listarDocumentos(cond1));
+                + viveroTandil.listarPlantas(cond1));
 
         // B
         CondicionDeBusqueda cond2 = new CondicionPorNombreVulgar("lengua de suegra");
         System.out.println("\nTodas las plantas a las que se conozca vulgarmente como 'lengua de suegra'\n" +
-                viveroTandil.listarDocumentos(cond2));
+                viveroTandil.listarPlantas(cond2));
 
         // C
         CondicionDeBusqueda cond3 = new CondicionPorClasificacion("Crassula");
         System.out.println("\nTodas las plantas cuya clasificación sea 'Crassula'\n" +
-                viveroTandil.listarDocumentos(cond3));
+                viveroTandil.listarPlantas(cond3));
 
         // D
         CondicionDeBusqueda cond4 = new CondicionPorSol(5);
         CondicionDeBusqueda cond5 = new CondicionPorRiego(3);
         CondicionDeBusqueda cond6AND = new CondicionAnd(cond4, cond5);
         System.out.println("\nTodas las plantas que requieran un nivel de sol superior a 5 y riego inferior a 3\n" +
-                viveroTandil.listarDocumentos(cond6AND));
+                viveroTandil.listarPlantas(cond6AND));
 
         // E
         CondicionDeBusqueda cond7 = new CondicionPorSol(4);
@@ -45,12 +45,12 @@ public class Principal {
 
         CondicionDeBusqueda cond9AND = new CondicionAnd(cond7NOT, cond8NOT);
         System.out.println("\nTodas las plantas que requieran un nivel de sol inferior a 4 y riego superior a 4\n" +
-                viveroTandil.listarDocumentos(cond9AND));
+                viveroTandil.listarPlantas(cond9AND));
 
         // F
         CondicionDeBusqueda cond10 = new CondicionPorRiego(3);
         System.out.println("\nTodas las plantas de interior que necesiten poco riego (inferior a 3)\n" +
-                viveroTandil.listarDocumentos(cond10));
+                viveroTandil.listarPlantas(cond10));
 
     }
 }

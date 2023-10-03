@@ -19,15 +19,15 @@ public class Proceso extends ElementoCola {
 
     public double getMemRequerida() {
         return memRequerida;
-    }
+    }   
 
     public void setMemRequerida(double memRequerida) {
         this.memRequerida = memRequerida;
     }
 
     @Override
-    public boolean esMenor(ElementoCola obj1, ElementoCola obj2) {
-        return ((Proceso) obj1).getMemRequerida() > ((Proceso) obj2).getMemRequerida();
+    public boolean esMenor(ElementoCola otro) {
+        return this.getMemRequerida()< ((Proceso)otro).getMemRequerida() ;
     }
 
     public String toString() {

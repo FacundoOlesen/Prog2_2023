@@ -10,10 +10,9 @@ public class ColaEspera {
     }
 
     public ElementoCola getSiguiente() {
-        if(this.tieneElementos()){
+        if (this.tieneElementos()) {
             return elementos.remove(0);
-        }
-        else{
+        } else {
             return null;
         }
     }
@@ -23,15 +22,17 @@ public class ColaEspera {
     }
 
     public void addElemento(ElementoCola elemento) {
+        boolean encontro = false;
         int i = 0;
-        while (i < elementos.size() && elemento.esMenor(this.elementos.get(i), elemento)) {
-            i++;
+        while (!encontro && i < elementos.size()) {
+            if (elemento.esMenor(elementos.get(i)))
+                i++;
+            else
+                encontro = true;
         }
-        if (i < elementos.size()) {
-            this.elementos.add(i, elemento);
-        } else {
-            this.elementos.add(elemento);
-        }
-
+        if (encontro)
+            elementos.add(i, elemento);
+        else
+            elementos.add(elemento);
     }
 }

@@ -37,21 +37,27 @@ public class ProductoQuimico {
         return list;
     }
 
-     public ArrayList<Cultivo> getCultivosNoUsar() {
+    public ArrayList<Cultivo> getCultivosNoUsar() {
         ArrayList<Cultivo> list = new ArrayList<>(this.cultivosNoUsar);
         return list;
     }
 
-   /*  public ArrayList<String> buscarProductoQuimicos(Enfermedad e) {
-        ArrayList<String> lista = new ArrayList<>();
-        for (int i = 0; i < this.estadosPatologicosTrata.size(); i++) {
-            String estadoPatologico = this.estadosPatologicosTrata.get(i);
-            if (estadoPatologico.equals(e.getEstadosPatologicos().get(i))) {
-                lista.add(estadoPatologico);
-            }
-        }
-        return lista;
-    }*/
+    public boolean puedeUsarseEn(Cultivo cultivo) {
+        return !this.cultivosNoUsar.contains(cultivo);
+    }
+
+    /*
+     * public ArrayList<String> buscarProductoQuimicos(Enfermedad e) {
+     * ArrayList<String> lista = new ArrayList<>();
+     * for (int i = 0; i < this.estadosPatologicosTrata.size(); i++) {
+     * String estadoPatologico = this.estadosPatologicosTrata.get(i);
+     * if (estadoPatologico.equals(e.getEstadosPatologicos().get(i))) {
+     * lista.add(estadoPatologico);
+     * }
+     * }
+     * return lista;
+     * }
+     */
 
     @Override
     public String toString() {

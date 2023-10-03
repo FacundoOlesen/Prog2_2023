@@ -16,7 +16,7 @@ public class Vivero {
     }
 
     
-     public ArrayList<Planta> listarDocumentos(CondicionDeBusqueda c) {
+     public ArrayList<Planta> listarPlantas(CondicionDeBusqueda c) {
         ArrayList<Planta> lista = new ArrayList<>();
         for (int i = 0; i < this.plantas.size(); i++) {
             if (c.cumple(this.plantas.get(i))) {

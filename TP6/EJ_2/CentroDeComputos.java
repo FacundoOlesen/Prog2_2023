@@ -10,7 +10,6 @@ public class CentroDeComputos {
     }
 
     public void addComputadora(Computadora compu) {
-        if (compu == null) return;
         if (procesos.tieneElementos()) {   // SI HAY PROCESOS ESPERANDO
             Proceso proc = (Proceso) procesos.getSiguiente();  // AGARRO EL PRIMER PROCESO
             compu.ejecutarProceso(proc);  //ASIGNO EL PROCESO A LA COMPUTADORA
@@ -20,20 +19,11 @@ public class CentroDeComputos {
     }
 
     public void addProceso(Proceso proce) {
-        if (proce == null)  return;
         if (computadoras.tieneElementos()) {   //SI HAY COMPUTADORAS LIBRES
             Computadora libre = (Computadora) computadoras.getSiguiente();//AGARRO LA PRIMER COMPUTADORA
             libre.ejecutarProceso(proce);//ESA COMPUTADORA EJECUTA EL PROCESO
         } else {
             procesos.addElemento(proce); // SI NO HAY COMPUTADORAS LIBRES, ENCOLO EL PROCESO 
         }
-    }
-
-    public Computadora getSiguienteCompu() {
-        return (Computadora) computadoras.getSiguiente();
-    }
-
-    public Proceso getSiguienteProceso() {
-        return (Proceso) procesos.getSiguiente();
     }
 }
