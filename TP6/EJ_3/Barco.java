@@ -21,7 +21,7 @@ public class Barco extends ElementoCola {
     }
 
     @Override
-    public boolean esMenor(ElementoCola obj1, ElementoCola obj2) {
-        return ((Barco) obj1).getCapacidad() > ((Barco) obj2).getCapacidad();
+    public boolean esMenor(ElementoCola otro) {
+        return this.getCapacidad()<((Barco)otro).getCapacidad();
     }
 }

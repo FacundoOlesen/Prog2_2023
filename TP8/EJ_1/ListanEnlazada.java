@@ -1,14 +1,15 @@
 package TP8.EJ_1;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ListanEnlazada implements SimpleList {
-    LinkedList<Object> listaEnlazada;
-    LinkedList<Object> otraLista;
+    private Nodo primero;
+    private Nodo ultimo;
+    private ArrayList<Object> listaEnlazada;
 
     public ListanEnlazada() {
-        this.listaEnlazada = new LinkedList<>();
+        this.listaEnlazada = new ArrayList<>();
     }
 
     @Override
@@ -39,7 +40,7 @@ public class ListanEnlazada implements SimpleList {
 
     @Override
     public Object get(int index) {
-        return this.otraLista.get(index);
+        return this.listaEnlazada.get(index);
     }
 
     @Override
@@ -67,6 +68,4 @@ public class ListanEnlazada implements SimpleList {
         return this.listaEnlazada.size();
     }
 
-    
-    
 }

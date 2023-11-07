@@ -18,7 +18,7 @@ public class Camion extends ElementoCola {
     }
 
     @Override
-    public boolean esMenor(ElementoCola obj1, ElementoCola obj2) {
-        return ((Camion) obj1).getFechaCarga().isBefore(((Camion) obj2).getFechaCarga());
+    public boolean esMenor(ElementoCola otro) {
+        return this.getFechaCarga().isBefore(((Camion)otro).getFechaCarga());
     }
 }

@@ -21,16 +21,18 @@ public class ColaEspera {
         return !elementos.isEmpty();
     }
 
-    public void addElemento(ElementoCola obj) {
+    public void addElemento(ElementoCola elemento) {
+        boolean encontro = false;
         int i = 0;
-        while (i < elementos.size() && obj.esMenor(elementos.get(i), obj)) {
-            i++;
+        while (!encontro && i < elementos.size()) {
+            if (elemento.esMenor(elementos.get(i)))
+                i++;
+            else
+                encontro = true;
         }
-        if (i < elementos.size()) {
-            elementos.add(i, obj);
-        } else {
-            elementos.add(obj);
-        }
-
+        if (encontro)
+            elementos.add(i, elemento);
+        else
+            elementos.add(elemento);
     }
 }
