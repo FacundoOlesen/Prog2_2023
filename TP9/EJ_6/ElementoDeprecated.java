@@ -1,5 +1,7 @@
 package TP9.EJ_6;
 
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -7,38 +9,31 @@ import java.util.Comparator;
 import TP9.EJ_6.Condiciones.Condicion;
 
 public class ElementoDeprecated extends Elemento {
+    private Elemento elemento;
+    private double porcentaje;
 
-    private ArrayList<Elemento> elementos;
-
-    public ElementoDeprecated(int ID) {
+    public ElementoDeprecated(int ID, int porcentaje) {
         super(ID);
-    }
-
-    public void addElemento(Elemento e) {
-        this.elementos.add(e);
+        this.porcentaje=porcentaje;
     }
 
     @Override
-    public int getAntiguedad() {
-        return 0;
+    public LocalDate getAntiguedad() {
+        return elemento.getAntiguedad();
     }
 
     @Override
     public double getValor() {
-        return 0;
+        double nuevoValor= elemento.getValor();
+        if(Period.between(getAntiguedad(), LocalDate.now().isNegative())){
+              nuevoValor = nuevoValor * porcentaje/100; 
+        }
+        return nuevoValor;
     }
 
 
-     @Override
+    @Override
     public ArrayList<ElementoSimple> getElementosQueCumplenOrdenados(Condicion condicion, Comparator<Elemento> orden) {
-         ArrayList<ElementoSimple> resultado = new ArrayList<>();
-        for (int i = 0; i < elementos.size(); i++) {
-            resultado.addAll(this.elementos.get(i).getElementosQueCumplenOrdenados(condicion, orden));
-        }
-        if (orden != null)
-            Collections.sort(resultado, orden);
-        else
-            Collections.sort(resultado);
-        return resultado;
+       return elemento.getElementosQueCumplenOrdenados(condicion, orden);
     }
 }

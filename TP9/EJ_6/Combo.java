@@ -1,5 +1,6 @@
 package TP9.EJ_6;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -27,10 +28,10 @@ public class Combo extends Elemento {
     }
 
     @Override
-    public int getAntiguedad() {
-        int antiguedadMayor = 0;
+    public LocalDate getAntiguedad() {
+        LocalDate antiguedadMayor = null;
         for (int i = 0; i < elementos.size(); i++) {
-            if (elementos.get(i).getAntiguedad() > antiguedadMayor)
+            if (antiguedadMayor==null || elementos.get(i).getAntiguedad().isBefore(antiguedadMayor))
                 antiguedadMayor = elementos.get(i).getAntiguedad();
         }
         return antiguedadMayor;
@@ -38,7 +39,7 @@ public class Combo extends Elemento {
 
     @Override
     public ArrayList<ElementoSimple> getElementosQueCumplenOrdenados(Condicion condicion, Comparator<Elemento> orden) {
-         ArrayList<ElementoSimple> resultado = new ArrayList<>();
+        ArrayList<ElementoSimple> resultado = new ArrayList<>();
         for (int i = 0; i < elementos.size(); i++) {
             resultado.addAll(this.elementos.get(i).getElementosQueCumplenOrdenados(condicion, orden));
         }

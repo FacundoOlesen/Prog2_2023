@@ -8,9 +8,8 @@ import TP9.EJ_5.Condiciones.Condicion;
 public class SeguroIntegrador extends Elemento {
     private ArrayList<Elemento> elementos;
 
-    public SeguroIntegrador(int dNIDuenio, int nroPoliza, String descripcion, double monto,
-            CalculadorDeCosto calculador) {
-        super(dNIDuenio, nroPoliza, descripcion, monto, calculador);
+    public SeguroIntegrador(int dNIDuenio) {
+        super(dNIDuenio);
         this.elementos = new ArrayList<>();
     }
 
@@ -19,12 +18,22 @@ public class SeguroIntegrador extends Elemento {
     }
 
     @Override
-    public double calcularCosto() {
+    public double getMontoAsegurado() {
         double cont = 0;
         for (int i = 0; i < elementos.size(); i++) {
-            cont += elementos.get(i).calcularCosto();
+            cont += elementos.get(i).getMontoAsegurado();
         }
         return cont;
+    }
+
+    @Override
+    public int getNroPoliza() {
+        int nroMayor = 0;
+        for (int i = 0; i < elementos.size(); i++) {
+            if (elementos.get(i).getNroPoliza() > nroMayor)
+                nroMayor = elementos.get(i).getNroPoliza();
+        }
+        return nroMayor;
     }
 
     @Override
@@ -32,7 +41,7 @@ public class SeguroIntegrador extends Elemento {
         ArrayList<Seguro> resultado = new ArrayList<>();
         for (int i = 0; i < elementos.size(); i++) {
             resultado.addAll(this.elementos.get(i).getSegurosQueCumplenOrdenados(c, orden));
-        }
+        }   
         if (orden != null)
             Collections.sort(resultado, orden);
         else

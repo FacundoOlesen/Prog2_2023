@@ -1,5 +1,6 @@
 package TP9.EJ_6;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;
 
@@ -9,7 +10,7 @@ public abstract class Elemento implements Comparable<Elemento> {
     private int ID;
 
     public Elemento(int iD) {
-        ID = iD;
+        this.ID = iD;
     }
 
     public int getID() {
@@ -21,13 +22,11 @@ public abstract class Elemento implements Comparable<Elemento> {
     }
 
     public abstract double getValor();
-
-    public abstract int getAntiguedad();
+    public abstract LocalDate getAntiguedad();
 
     public abstract ArrayList<ElementoSimple> getElementosQueCumplenOrdenados(Condicion condicion, Comparator<Elemento> orden);
-
     @Override
     public int compareTo(Elemento otro) {
-        return this.getID() - (otro.getID());
+        return this.getID() - (otro.getID()); //Si da 0, comparo por antiguedad ... ¿Esta bienque esto este aca abstraido?
     }
 }

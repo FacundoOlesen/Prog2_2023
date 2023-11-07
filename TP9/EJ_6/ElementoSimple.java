@@ -1,5 +1,6 @@
 package TP9.EJ_6;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;
 
@@ -7,10 +8,10 @@ import TP9.EJ_6.Condiciones.Condicion;
 
 public class ElementoSimple extends Elemento {
     private double valor;
-    private int antiguedad;
+    private LocalDate antiguedad;
     private String descripcion;
 
-    public ElementoSimple(int ID, double valor, int antiguedad, String descripcion) {
+    public ElementoSimple(int ID, double valor, LocalDate antiguedad, String descripcion) {
         super(ID);
         this.valor = valor;
         this.antiguedad = antiguedad;
@@ -27,11 +28,11 @@ public class ElementoSimple extends Elemento {
     }
 
     @Override
-    public int getAntiguedad() {
+    public LocalDate getAntiguedad() {
         return antiguedad;
     }
 
-    public void setAntiguedad(int antiguedad) {
+    public void setAntiguedad(LocalDate antiguedad) {
         this.antiguedad = antiguedad;
     }
 

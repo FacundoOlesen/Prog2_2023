@@ -19,7 +19,7 @@ public class Coleccion {
         for (int i = 0; i < this.documentos.size(); i++) {
             if (c.cumple(this.documentos.get(i))) {
                 lista.add(this.documentos.get(i));
-            }
+            }   
         }
         return lista;
     }

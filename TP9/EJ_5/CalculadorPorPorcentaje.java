@@ -2,16 +2,14 @@ package TP9.EJ_5;
 
 public class CalculadorPorPorcentaje extends CalculadorDeCosto {
     private double porcentaje;
-    private double montoAsegurado;
 
-    public CalculadorPorPorcentaje(double porcentaje, double montoAsegurado) {
+    public CalculadorPorPorcentaje(double porcentaje) {
         this.porcentaje = porcentaje;
-        this.montoAsegurado=montoAsegurado;
     }
 
     @Override
-    public double calcularCosto() {
-        return porcentaje*montoAsegurado/100;
+    public double calcularCosto(Seguro seguro) {
+        return porcentaje*seguro.getMonto()/100;
     }
 
 }
