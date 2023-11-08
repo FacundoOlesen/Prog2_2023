@@ -2,6 +2,8 @@ package Examenes.Parcial2022;
 
 import java.util.ArrayList;
 
+import Examenes.Parcial2022.Condiciones.Condicion;
+
 public class Grupo extends Elemento {
     private ArrayList<Elemento> elementos;
     private int posicion;
@@ -41,6 +43,14 @@ public class Grupo extends Elemento {
                     palabrasClaveConcatenadas.add(aux.get(i));
         }
         return palabrasClaveConcatenadas;
+    }
+
+    @Override
+    public ArrayList<Noticia> buscar(Condicion c) {
+        ArrayList<Noticia> resultado = new ArrayList<>();
+        for (int i = 0; i < elementos.size(); i++)
+            resultado.addAll(elementos.get(i).buscar(c));
+        return resultado;
     }
 
 }

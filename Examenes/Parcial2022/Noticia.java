@@ -2,6 +2,8 @@ package Examenes.Parcial2022;
 
 import java.util.ArrayList;
 
+import Examenes.Parcial2022.Condiciones.Condicion;
+
 public class Noticia extends Elemento {
     private String titulo;
     private String contenido;
@@ -50,8 +52,6 @@ public class Noticia extends Elemento {
         this.categoria = categoria;
     }
 
-    
-
     @Override
     public ArrayList<String> getPalabrasClave() {
         return new ArrayList<>(this.palabrasClave);
@@ -61,4 +61,13 @@ public class Noticia extends Elemento {
         if (!this.palabrasClave.contains(palabra))
             palabrasClave.add(palabra);
     }
+
+    @Override
+    public ArrayList<Noticia> buscar(Condicion c) {
+        ArrayList<Noticia> resultado = new ArrayList<>();
+        if (c.cumple(this))
+            resultado.add(this);
+        return resultado;
+    }
+
 }
