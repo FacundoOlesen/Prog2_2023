@@ -29,7 +29,7 @@ public class Combo extends Elemento {
             this.elementos.add(e);
     }
 
-    public ArrayList<Elemento> getElementos(){
+    public ArrayList<Elemento> getElementos() {
         return new ArrayList<>(this.elementos);
     }
 
@@ -62,8 +62,9 @@ public class Combo extends Elemento {
 
     @Override
     public Elemento getCopia() {
-        Combo copia = new Combo(this.getID(), this.getDestino(), this.getFechaPartida(), this.getCostoEnvio(), this.getValorAsegurado(), this.getCond());
-        for(int i =0; i<elementos.size();i++)
+        Combo copia = new Combo(this.getID(), this.getDestino(), this.getFechaPartida(), this.getCostoEnvio(),
+                this.getValorAsegurado(), this.getCond());
+        for (int i = 0; i < elementos.size(); i++)
             copia.addElemento(elementos.get(i));
         return copia;
     }

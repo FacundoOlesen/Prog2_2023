@@ -55,7 +55,10 @@ public class Grupo extends Elemento {
     // COPIAS
     @Override
     public Grupo copia() {
-        return new Grupo(this.getNombre(), this.getDescripcion(), this.getImagen());
+        Grupo copia = new Grupo(this.getNombre(), this.getDescripcion(), this.getImagen());
+        for (int i = 0; i < elementos.size(); i++)
+            copia.addElemento(elementos.get(i));
+        return copia;
     }
 
     @Override
