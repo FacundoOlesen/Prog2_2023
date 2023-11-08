@@ -2,14 +2,18 @@ package TP9.EJ_7;
 
 import java.util.ArrayList;
 
+import TP9.EJ_7.Condiciones.Condicion;
+
 public class Combo extends Elemento {
     private ArrayList<Elemento> elementos;
     private int porcentaje;
     private int descuentoTope;
+    private Condicion cond;
 
-    public Combo(int porcentaje, int descuentoTope) {
+    public Combo(int porcentaje, int descuentoTope, Condicion c) {
         this.porcentaje = porcentaje;
         this.descuentoTope = descuentoTope;
+        this.cond=c;
         this.elementos = new ArrayList<>();
     }
 
@@ -30,7 +34,12 @@ public class Combo extends Elemento {
     }
 
     public void addElementos(Elemento e) {
-        this.elementos.add(e);
+        if (cond.cumple(e))
+            this.elementos.add(e);
+    }
+
+    public ArrayList<Elemento> getElementos() {
+        return new ArrayList<>(this.elementos);
     }
 
     @Override
@@ -46,7 +55,10 @@ public class Combo extends Elemento {
     public double getPrecio() {
         double precio = 0;
         for (int i = 0; i < elementos.size(); i++) {
-            precio += elementos.get(i).getPrecio() * porcentaje / 100;
+            if (porcentaje > descuentoTope)
+                porcentaje = descuentoTope;
+            else
+                precio += elementos.get(i).getPrecio() * porcentaje / 100;
         }
         return precio;
     }
@@ -68,6 +80,37 @@ public class Combo extends Elemento {
                     categoriasConcatenadas.addAll(elementos.get(i).getCategorias());
         }
         return categoriasConcatenadas;
+    }
+
+    @Override
+    public int getCantidadProductos() {
+        int cant = 0;
+        for (int i = 0; i < elementos.size(); i++) {
+            cant += this.elementos.get(i).getCantidadProductos();
+        }
+        return cant;
+    }
+
+    public Producto getProductoMenorPeso() {
+        if (elementos.size() > 0) {
+            Producto prodMenor = elementos.get(0).getProductoMenorPeso();
+            for (int i = 1; i < elementos.size(); i++) {
+                if (elementos.get(i).getPeso() < prodMenor.getPeso()) {
+                    prodMenor = elementos.get(i).getProductoMenorPeso();
+                }
+            }
+            return prodMenor;
+        }
+        return null;
+    }
+
+    @Override
+    public ArrayList<Elemento> buscar(Condicion c) {
+        ArrayList<Elemento> lista = new ArrayList<>();
+        for (int i = 0; i < elementos.size(); i++) {
+            lista.addAll(this.elementos.get(i).buscar(c));
+        }
+        return lista;
     }
 
 }

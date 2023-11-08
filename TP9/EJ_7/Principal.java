@@ -1,12 +1,14 @@
 package TP9.EJ_7;
 
+import TP9.EJ_7.Condiciones.CondicionPorCategoria;
+
 public class Principal {
     public static void main(String[] args) {
         CalculadorDeCostoFijo cal1 = new CalculadorDeCostoFijo(20);
         Producto prod1 = new Producto(20, 20, cal1);
         Producto prod2 = new Producto(40, 40, cal1);
 
-        Combo combo1 = new Combo(50, 10);
+        Combo combo1 = new Combo(50, 10, new CondicionPorCategoria("dsa"));
         combo1.addElementos(prod1);
         combo1.addElementos(prod2);
         

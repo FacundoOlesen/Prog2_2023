@@ -1,31 +1,24 @@
 package Examenes.Parcial2023;
 
-import java.util.ArrayList;
-
-import Examenes.Parcial2023.Condiciones.Condicion;
-
 public class PiezaExclusiva extends PiezaSimple {
 
-    private int costoExtra;
+    private int costoExclusividad;
 
-    public PiezaExclusiva(String nombre, String descripcion, String color, int tiempo, int pla) {
-        super(nombre, descripcion, color, tiempo, pla);
-    }
-
-    public ArrayList<Pieza> buscar(Condicion cond) {
-        return new ArrayList<Pieza>();
+    public PiezaExclusiva(String nombre, String descripcion, String color, int tiempoEstimado, int cantPLA,
+            int costoExclusividad) {
+        super(nombre, descripcion, color, tiempoEstimado, cantPLA);
+        this.costoExclusividad = costoExclusividad;
     }
 
     public int getCosto() {
-        return super.getCosto() + costoExtra;
+        return super.getCosto() + costoExclusividad;
     }
 
-    public int getCostoExtra() {
-        return costoExtra;
+    public int getCostoExclusividad() {
+        return costoExclusividad;
     }
 
-    public void setCostoExtra(int costoExtra) {
-        this.costoExtra = costoExtra;
+    public void setCostoExclusividad(int costoExclusividad) {
+        this.costoExclusividad = costoExclusividad;
     }
-
 }

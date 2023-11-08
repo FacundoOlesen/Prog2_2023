@@ -6,7 +6,6 @@ import java.util.Comparator;
 import TP9.EJ_8.Condiciones.Condicion;
 
 public class Video extends Elemento implements Comparable<Video> {
-    private String titulo;
     private Usuario usuario;
     private int duracion;
     private int cantVisualizaciones;
@@ -17,22 +16,14 @@ public class Video extends Elemento implements Comparable<Video> {
 
     public Video(String titulo, Usuario usuario, int duracion, int cantVisualizaciones, int cantMG, int cantNoMG,
             int anioPublicacion) {
-        this.titulo = titulo;
-        this.usuario = usuario;
+                super(titulo);
+                this.usuario = usuario;
         this.duracion = duracion;
         this.cantVisualizaciones = cantVisualizaciones;
         this.cantMG = cantMG;
         this.cantNoMG = cantNoMG;
         this.anioPublicacion = anioPublicacion;
         this.palabrasClave = new ArrayList<>();
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
     }
 
     public Usuario getUsuario() {

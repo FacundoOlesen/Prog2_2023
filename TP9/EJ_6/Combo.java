@@ -12,6 +12,7 @@ public class Combo extends Elemento {
 
     public Combo(int ID) {
         super(ID);
+        this.elementos = new ArrayList<>();
     }
 
     public void addElemento(Elemento e) {
@@ -31,18 +32,17 @@ public class Combo extends Elemento {
     public LocalDate getAntiguedad() {
         LocalDate antiguedadMayor = null;
         for (int i = 0; i < elementos.size(); i++) {
-            if (antiguedadMayor==null || elementos.get(i).getAntiguedad().isBefore(antiguedadMayor))
+            if (antiguedadMayor == null || elementos.get(i).getAntiguedad().isBefore(antiguedadMayor))
                 antiguedadMayor = elementos.get(i).getAntiguedad();
         }
         return antiguedadMayor;
     }
 
     @Override
-    public ArrayList<ElementoSimple> getElementosQueCumplenOrdenados(Condicion condicion, Comparator<Elemento> orden) {
+    public ArrayList<ElementoSimple> buscar(Condicion condicion, Comparator<Elemento> orden) {
         ArrayList<ElementoSimple> resultado = new ArrayList<>();
-        for (int i = 0; i < elementos.size(); i++) {
-            resultado.addAll(this.elementos.get(i).getElementosQueCumplenOrdenados(condicion, orden));
-        }
+        for (int i = 0; i < elementos.size(); i++)
+            resultado.addAll(this.elementos.get(i).buscar(condicion, orden));
         if (orden != null)
             Collections.sort(resultado, orden);
         else

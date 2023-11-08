@@ -2,7 +2,6 @@ package TP9.EJ_4;
 
 import java.util.ArrayList;
 
-import TP9.EJ_2.Archivo;
 
 public class Noticia extends Elemento {
     private String titulo;

@@ -24,7 +24,7 @@ public abstract class Elemento implements Comparable<Elemento> {
     public abstract double getValor();
     public abstract LocalDate getAntiguedad();
 
-    public abstract ArrayList<ElementoSimple> getElementosQueCumplenOrdenados(Condicion condicion, Comparator<Elemento> orden);
+    public abstract ArrayList<ElementoSimple> buscar(Condicion condicion, Comparator<Elemento> orden);
     @Override
     public int compareTo(Elemento otro) {
         return this.getID() - (otro.getID()); //Si da 0, comparo por antiguedad ... ¿Esta bien que esto este aca abstraido?

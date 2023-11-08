@@ -2,6 +2,8 @@ package TP9.EJ_7;
 
 import java.util.ArrayList;
 
+import TP9.EJ_7.Condiciones.Condicion;
+
 public class ElementoDeprecated extends Elemento {
     private Elemento elemento;
 
@@ -32,4 +34,18 @@ public class ElementoDeprecated extends Elemento {
         return elemento.getCategorias();
     }
 
+    @Override
+    public int getCantidadProductos() {
+        return 1;
+    }
+
+    @Override
+    public Producto getProductoMenorPeso() {
+        return elemento.getProductoMenorPeso();
+    }
+
+    @Override
+    public ArrayList<Elemento> buscar(Condicion c) {
+        return elemento.buscar(c);
+    }
 }

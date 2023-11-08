@@ -45,7 +45,7 @@ public class ElementoSimple extends Elemento {
     }
 
     @Override
-    public ArrayList<ElementoSimple> getElementosQueCumplenOrdenados(Condicion c, Comparator<Elemento> orden) {
+    public ArrayList<ElementoSimple> buscar(Condicion c, Comparator<Elemento> orden) {
         ArrayList<ElementoSimple> resultado = new ArrayList<>();
         if (c.cumple(this)) {
             resultado.add(this);

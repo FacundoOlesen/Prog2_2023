@@ -11,5 +11,4 @@ public class CalculadorDeCostoFijo extends CalculadorDeCosto {
     public double calcularCosto(Producto producto) {
         return this.costoFijo;
     }
-
 }

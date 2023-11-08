@@ -14,5 +14,4 @@ public class CondicionPorPalabraClave extends Condicion {
     public boolean cumple(Video video) {
         return video.contienePalabra(palabra);
     }
-
 }

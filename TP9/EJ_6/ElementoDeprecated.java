@@ -33,7 +33,7 @@ public class ElementoDeprecated extends Elemento {
 
 
     @Override
-    public ArrayList<ElementoSimple> getElementosQueCumplenOrdenados(Condicion condicion, Comparator<Elemento> orden) {
-       return elemento.getElementosQueCumplenOrdenados(condicion, orden);
+    public ArrayList<ElementoSimple> buscar(Condicion condicion, Comparator<Elemento> orden) {
+       return elemento.buscar(condicion, orden);
     }
 }

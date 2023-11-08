@@ -2,6 +2,8 @@ package TP9.EJ_7;
 
 import java.util.ArrayList;
 
+import TP9.EJ_7.Condiciones.Condicion;
+
 public class Producto extends Elemento {
 
     private ArrayList<String> categorias;
@@ -54,5 +56,23 @@ public class Producto extends Elemento {
     @Override
     public ArrayList<String> getCategorias() {
         return new ArrayList<>(categorias);
+    }
+
+    @Override
+    public int getCantidadProductos() {
+        return 1;
+    }
+
+    @Override
+    public Producto getProductoMenorPeso() {
+        return this;
+    }
+
+    @Override
+    public ArrayList<Elemento> buscar(Condicion c) {
+        ArrayList<Elemento> lista = new ArrayList<>();
+        if (c.cumple(this))
+            lista.add(this);
+        return lista;
     }
 }

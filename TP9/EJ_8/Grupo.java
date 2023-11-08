@@ -7,25 +7,14 @@ import java.util.Comparator;
 import TP9.EJ_8.Condiciones.Condicion;
 
 public class Grupo extends Elemento {
-    private String titulo;
     private int segsDemora;
     private ArrayList<Elemento> elementos;
 
     public Grupo(String titulo, int segsDemora) {
-        this.titulo = titulo;
+        super(titulo);
         this.segsDemora=segsDemora;
         this.elementos = new ArrayList<>();
     }
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    
 
     public int getSegsDemora() {
         return segsDemora;
@@ -54,13 +43,14 @@ public class Grupo extends Elemento {
 
     @Override
     public ArrayList<String> getPalabrasClave() {
-        ArrayList<String> palabrasClaveConcatenadas = new ArrayList<>();
+        ArrayList<String> resultado = new ArrayList<>();
         for (int i = 0; i < elementos.size(); i++) {
-            for (int j = 0; j < elementos.get(i).getPalabrasClave().size(); j++)
-                if (!palabrasClaveConcatenadas.contains(elementos.get(i).getPalabrasClave().get(j)))
-                    palabrasClaveConcatenadas.addAll(elementos.get(i).getPalabrasClave());
+            ArrayList<String> aux = elementos.get(i).getPalabrasClave();
+            for (int j = 0; j < aux.size(); j++)
+                if (!resultado.contains(aux.get(i)))
+                    resultado.add(aux.get(i));
         }
-        return palabrasClaveConcatenadas;
+        return resultado;
     }
 
     @Override

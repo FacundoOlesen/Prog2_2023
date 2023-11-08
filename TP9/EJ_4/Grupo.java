@@ -67,10 +67,7 @@ public class Grupo extends Elemento {
             if (copiaHijo != null)
                 copia.addElemento(copiaHijo);
         }
-        if (copia.getCantNoticias() == 0)
-            return null;
-        else
-            return copia;
+        return copia;
     }
 
     // PATH
