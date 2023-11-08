@@ -1,4 +1,4 @@
-package TP9.EJ_5;
+package TP9.EJ_7;
 
 public class CalculadorDeCostoFijo extends CalculadorDeCosto {
     private double costoFijo;
@@ -8,7 +8,8 @@ public class CalculadorDeCostoFijo extends CalculadorDeCosto {
     }
 
     @Override
-    public double calcularCosto(Seguro seguro) {
+    public double calcularCosto(Producto producto) {
         return this.costoFijo;
     }
+
 }

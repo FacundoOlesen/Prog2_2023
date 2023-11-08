@@ -27,6 +27,6 @@ public abstract class Elemento implements Comparable<Elemento> {
     public abstract ArrayList<ElementoSimple> getElementosQueCumplenOrdenados(Condicion condicion, Comparator<Elemento> orden);
     @Override
     public int compareTo(Elemento otro) {
-        return this.getID() - (otro.getID()); //Si da 0, comparo por antiguedad ... ¿Esta bienque esto este aca abstraido?
+        return this.getID() - (otro.getID()); //Si da 0, comparo por antiguedad ... ¿Esta bien que esto este aca abstraido?
     }
 }

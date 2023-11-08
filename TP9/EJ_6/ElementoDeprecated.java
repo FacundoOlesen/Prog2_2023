@@ -25,9 +25,9 @@ public class ElementoDeprecated extends Elemento {
     @Override
     public double getValor() {
         double nuevoValor= elemento.getValor();
-        if(Period.between(getAntiguedad(), LocalDate.now().isNegative())){
-              nuevoValor = nuevoValor * porcentaje/100; 
-        }
+        //if(Period.between(getAntiguedad(), LocalDate.now().isNegative()))
+            //  nuevoValor = nuevoValor * porcentaje/100; 
+        
         return nuevoValor;
     }
 
