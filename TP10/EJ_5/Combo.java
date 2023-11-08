@@ -62,7 +62,10 @@ public class Combo extends Elemento {
 
     @Override
     public Elemento getCopia() {
-        return new Combo(getID(), getDestino(), getFechaPartida(), getCostoEnvio(), getValorAsegurado(), getCond());
+        Combo copia = new Combo(this.getID(), this.getDestino(), this.getFechaPartida(), this.getCostoEnvio(), this.getValorAsegurado(), this.getCond());
+        for(int i =0; i<elementos.size();i++)
+            copia.addElemento(elementos.get(i));
+        return copia;
     }
 
     @Override
