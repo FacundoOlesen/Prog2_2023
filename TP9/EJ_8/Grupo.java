@@ -29,7 +29,7 @@ public class Grupo extends Elemento {
     }
 
     @Override
-    public ArrayList<Video> getVideosQueCumplenOrdenados(Condicion c, Comparator<Elemento> orden) {
+    public ArrayList<Video> getVideosQueCumplenOrdenados(Condicion c, Comparator<Video> orden) {
         ArrayList<Video> resultado = new ArrayList<>();
         for (int i = 0; i < elementos.size(); i++) {
             resultado.addAll(this.elementos.get(i).getVideosQueCumplenOrdenados(c, orden));
@@ -47,8 +47,8 @@ public class Grupo extends Elemento {
         for (int i = 0; i < elementos.size(); i++) {
             ArrayList<String> aux = elementos.get(i).getPalabrasClave();
             for (int j = 0; j < aux.size(); j++)
-                if (!resultado.contains(aux.get(i)))
-                    resultado.add(aux.get(i));
+                if (!resultado.contains(aux.get(j)))
+                    resultado.add(aux.get(j));
         }
         return resultado;
     }

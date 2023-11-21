@@ -19,7 +19,7 @@ public abstract class Elemento {
         this.titulo = titulo;
     }
 
-    public abstract ArrayList<Video> getVideosQueCumplenOrdenados(Condicion condicion, Comparator<Elemento> orden);
+    public abstract ArrayList<Video> getVideosQueCumplenOrdenados(Condicion condicion, Comparator<Video> orden);
 
     public abstract ArrayList<String> getPalabrasClave();
 

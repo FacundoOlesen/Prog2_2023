@@ -2,7 +2,6 @@ package TP9.EJ_4;
 
 import java.util.ArrayList;
 
-
 public class Noticia extends Elemento {
     private String titulo;
     private ArrayList<String> palabrasClave;
@@ -64,9 +63,10 @@ public class Noticia extends Elemento {
         this.palabrasClave.add(palabra);
     }
 
-    public boolean contienePalabra(String palabra){
+    public boolean contienePalabra(String palabra) {
         return this.palabrasClave.contains(palabra);
     }
+
     @Override
     public int getCantNoticias() {
         return 1;
@@ -84,6 +84,14 @@ public class Noticia extends Elemento {
         if (c.cumple(this))
             return this.copia();
         return null;
+    }
+
+    @Override
+    public ArrayList<Noticia> buscar(Condicion c) {
+        ArrayList<Noticia> resultado = new ArrayList<>();
+        if (c.cumple(this))
+            resultado.add(this);
+        return resultado;
     }
 
     // PATH

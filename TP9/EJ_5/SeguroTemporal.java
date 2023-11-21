@@ -48,7 +48,7 @@ public class SeguroTemporal extends Elemento {
     }
 
     @Override
-    public ArrayList<Seguro> getSegurosQueCumplenOrdenados(Condicion c, Comparator<Elemento> orden) {
+    public ArrayList<Seguro> getSegurosQueCumplenOrdenados(Condicion c, Comparator<Seguro> orden) {
        return elemento.getSegurosQueCumplenOrdenados(c, orden);
     }
 }

@@ -15,7 +15,7 @@ public abstract class Elemento {
     private double valorAsegurado;
 
     public Elemento(String iD, String destino, LocalDate fechaPartida, double costoEnvio, double valorAsegurado) {
-        ID = iD;
+        this.ID = iD;
         this.destino = destino;
         this.fechaPartida = fechaPartida;
         this.costoEnvio = costoEnvio;

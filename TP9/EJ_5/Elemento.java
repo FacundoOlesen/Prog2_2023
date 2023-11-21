@@ -22,7 +22,7 @@ public abstract class Elemento implements Comparable<Elemento> {
 
     public abstract int getNroPoliza();
     public abstract double getMontoAsegurado();
-    public abstract ArrayList<Seguro> getSegurosQueCumplenOrdenados(Condicion condicion, Comparator<Elemento> orden);
+    public abstract ArrayList<Seguro> getSegurosQueCumplenOrdenados(Condicion condicion, Comparator<Seguro> orden);
 
     @Override
     public int compareTo(Elemento otro) {

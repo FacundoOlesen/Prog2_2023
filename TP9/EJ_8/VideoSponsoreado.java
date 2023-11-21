@@ -22,7 +22,7 @@ public class VideoSponsoreado extends Grupo {
     }
 
     @Override
-    public ArrayList<Video> getVideosQueCumplenOrdenados(Condicion c, Comparator<Elemento> orden) {
+    public ArrayList<Video> getVideosQueCumplenOrdenados(Condicion c, Comparator<Video> orden) {
         ArrayList<Video> resultado = new ArrayList<>();
         resultado.add(video);
         resultado.addAll(super.getVideosQueCumplenOrdenados(c, orden));

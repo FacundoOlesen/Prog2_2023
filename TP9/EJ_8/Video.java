@@ -89,7 +89,7 @@ public class Video extends Elemento implements Comparable<Video> {
     }
 
     @Override
-    public ArrayList<Video> getVideosQueCumplenOrdenados(Condicion c, Comparator<Elemento> orden) {
+    public ArrayList<Video> getVideosQueCumplenOrdenados(Condicion c, Comparator<Video> orden) {
         ArrayList<Video> resultado = new ArrayList<>();
         if (c.cumple(this)) {
             resultado.add(this);

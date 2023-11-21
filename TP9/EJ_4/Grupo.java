@@ -73,6 +73,14 @@ public class Grupo extends Elemento {
         return copia;
     }
 
+    @Override
+    public ArrayList<Noticia> buscar(Condicion c) {
+        ArrayList<Noticia> resultado = new ArrayList<>();
+        for(int i =0; i< elementos.size();i++)
+            resultado.addAll(elementos.get(i).buscar(c));
+        return resultado;
+    }
+
     // PATH
     public void imprimirContenido(String tab) {
         super.imprimirContenido(tab);

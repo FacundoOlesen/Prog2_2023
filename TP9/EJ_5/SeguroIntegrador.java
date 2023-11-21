@@ -37,7 +37,7 @@ public class SeguroIntegrador extends Elemento {
     }
 
     @Override
-    public ArrayList<Seguro> getSegurosQueCumplenOrdenados(Condicion c, Comparator<Elemento> orden) {
+    public ArrayList<Seguro> getSegurosQueCumplenOrdenados(Condicion c, Comparator<Seguro> orden) {
         ArrayList<Seguro> resultado = new ArrayList<>();
         for (int i = 0; i < elementos.size(); i++) {
             resultado.addAll(this.elementos.get(i).getSegurosQueCumplenOrdenados(c, orden));
